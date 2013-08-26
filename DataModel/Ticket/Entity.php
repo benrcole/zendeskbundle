@@ -85,4 +85,8 @@ class Entity extends AbstractEntity
         return $this->_repository->save( $this );
     }
 
+    public function update()
+    {
+        $this->_repository->save($this);
+    }
 }
