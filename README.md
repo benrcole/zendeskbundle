@@ -24,6 +24,9 @@ Add the following fields to your application's parameters.yml:
         zendesk_api_user:  youruser
         zendesk_api_subdomain: yoursubdomain
 
+Ensure that you have generated an API token
+
+
 Configuring the Bundle
 ================
 
