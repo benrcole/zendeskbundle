@@ -23,3 +23,18 @@ Add the following fields to your application's parameters.yml:
         zendesk_api_key:   yourkey
         zendesk_api_user:  youruser
         zendesk_api_subdomain: yoursubdomain
+
+Configuring the Bundle
+================
+
+Add the below to your composer.json
+
+ 
+    "malwarebytes/zendesk-api": "dev-master",
+    "malwarebytes/zendeskbundle": "dev-master"
+
+Add the below to your app/config.yml
+
+    zendesk:
+        resource: "@ZendeskBundle/Resources/config/routing.yml"
+        prefix: /zendesk
