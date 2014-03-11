@@ -12,4 +12,4 @@ services:
         arguments: [@zendesk.api]
     zendesk.service:
         class: %zendesk.zendeskservice.class%
-        arguments: [@zendesk.repos]
+        arguments: [@zendesk.repos, @fos_user.user_manager.default,@doctrine.orm.entity_manager]

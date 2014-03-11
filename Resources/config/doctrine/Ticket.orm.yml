@@ -1,0 +1,35 @@
+Malwarebytes\ZendeskBundle\Entity\Ticket:
+    type: entity
+    table: ticket
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: text
+            fixed: false
+            nullable: true
+        zendeskID:
+            type: text
+            fixed: false
+            nullable: true
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+    oneToMany:
+        comments:
+            targetEntity: Comment
+            mappedBy: ticket
+    manyToOne:
+        owner:
+            targetEntity: CM\UserBundle\Entity\User
+            inversedBy: tickets
+
+    lifecycleCallbacks:
+        prePersist: [setCreatedValue,setUpdatedValue]
+        preUpdate: [setUpdatedValue]
